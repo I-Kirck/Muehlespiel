@@ -2,12 +2,14 @@ public class Main {
     public static void main (String[] args){
 
         GameBoard gameBoard = new GameBoard();
-        gameBoard.initBoard();
+        char[][] board = gameBoard.boardTemplate;
 
-        for (char[] line: gameBoard.board){
+        for (char[] line: board){
             System.out.println(new String(line));
         }
 
     }
 }
+
+
 
