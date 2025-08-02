@@ -24,7 +24,7 @@ public class GameBoard {
 
     char[][] boardTemplate = new char[boardSize][boardSize];
 
-    //Koordinanten auf die man setzten kann
+    //Koordinanten auf die man setzen kann
     String[] validPoints = {
             "11", "41", "71",
             "22", "42", "62",
