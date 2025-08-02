@@ -27,16 +27,9 @@ public class Game {
 
     public String waitForInput(){
         Scanner userInput = new Scanner(System.in);
-        while (true) {
-            String string = String.format("%s setze einen Stein (Auswahl über Zahlenkombo, z.B. 71 -> 7. Spalte, 1. Reihe):", currentPlayer.getName());
-            System.out.println(string);
-
-            String input = userInput.nextLine();
-
-            if (!input.isEmpty()) {
-                return input;
-            }
-        }
+        String string = String.format("%s setze einen Stein (Auswahl über Zahlenkombo, z.B. 71 -> 7. Spalte, 1. Reihe):", currentPlayer.getName());
+        System.out.println(string);
+        return userInput.nextLine();
     }
 
     public void checkForGameOver(){
