@@ -24,7 +24,17 @@ public class GameBoard {
 
     char[][] boardTemplate = new char[boardSize][boardSize];
 
-    //Setzbare Punkte
+    //Koordinanten auf die man setzten kann
+    String[] validPoints = {
+            "11", "41", "71",
+            "22", "42", "62",
+            "33", "43", "53",
+            "14", "24", "34", "54", "64", "74",
+            "35", "45", "55",
+            "26", "46", "66",
+            "17", "47", "77"
+    };
+
     static class Point {
         int row, col;
         Point(int row, int col) {
@@ -47,26 +57,16 @@ public class GameBoard {
         }
     }
 
+    //SpielfeldKoordinaten 7x7
     public void mapPointsToCoords(){
-        int gameY = 1;
+        int index = 0;
         for (int row = 0; row < boardTemplate.length; row++){
-            //SpielfeldKoordinate 7x7
-            int gameX = 1;
-            boolean foundPoint = false;
             for (int col = 0; col < boardTemplate[row].length; col++){
-
                 if(boardTemplate[row][col] == '•'){
-
-                    String key = String.format("%d%d", gameY, gameX);
+                    String key = validPoints[index];
                     coordMap.put(key, new Point(row, col));
-
-                    gameX++;
-                    foundPoint = true;
+                    index++;
                 }
-            }
-
-            if (foundPoint){
-                gameY++;
             }
         }
     }
